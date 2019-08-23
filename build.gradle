@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    mavenLocal()
+    jcenter()
+}
+
+dependencies {
+    testImplementation 'org.testng:testng:6.14.3'
+}
+
+mainClassName = 'etl.Main'
+
+test {
+    useTestNG()
+}
