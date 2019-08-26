@@ -2,6 +2,8 @@ package etl;
 
 import java.util.Queue;
 
+import etl.extract.FileRecord;
+
 public class Transformer implements Runnable {
 
     public Transformer(Queue<FileRecord> recordsToTransform, Queue<DatabaseRecord> recordsToLoad) {

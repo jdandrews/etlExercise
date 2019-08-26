@@ -1,11 +1,13 @@
-package etl;
+package etl.observe;
 
 import java.io.File;
 import java.util.Arrays;
 import java.util.Queue;
 
+import etl.Configuration;
+
 /**
- * Watches a directory for inbound files. When it finds them, it launches a set of processes to process the file.
+ * Watches a directory for inbound files. When it finds them, it enqueues them on the supplied queue to be processed.
  */
 public class FileSystemMonitor implements Runnable {
 
@@ -14,14 +16,22 @@ public class FileSystemMonitor implements Runnable {
     private File incomingFiles;
 
     /**
-     * Construct a File System Monitor.
+     * Construct a File System Monitor. The constructed monitor will use the configured directory, or will default
+     * to "./etlIncoming" to look for inbound files.
      *
      * @param queueForIncomingFiles the queue to use for listing unprocessed files.
      */
     public FileSystemMonitor(Queue<File> queueForIncomingFiles) {
-        this(queueForIncomingFiles, new File("./incomingFiles"));
+        this(queueForIncomingFiles,
+                new File(Configuration.instance().getProperty(Configuration.INPUT_DIRECTORY_KEY, "./etlIncoming")));
     }
 
+    /**
+     * Construct a File System Monitor.
+     *
+     * @param queueForIncomingFiles the queue to use for listing unprocessed files.
+     * @param incomingDirectory the directory to scan for unprocessed files.
+     */
     public FileSystemMonitor(Queue<File> queueForIncomingFiles, File incomingDirectory) {
         if ( queueForIncomingFiles == null ) {
             throw new NullPointerException("inbound file queue may not be null");
@@ -61,7 +71,7 @@ public class FileSystemMonitor implements Runnable {
 
         File[] files = incomingFiles.listFiles();
         // enqueue files oldest-to-newest
-        Arrays.sort(files, (a, b) -> a.lastModified() >= b.lastModified() ? 1 : -1);
+        Arrays.sort(files, (file1, file2) -> file1.lastModified() >= file2.lastModified() ? 1 : -1);
 
         for (File f : files) {
             if ( f.isFile() ) {

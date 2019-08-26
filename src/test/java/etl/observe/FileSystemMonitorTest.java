@@ -1,4 +1,4 @@
-package etl;
+package etl.observe;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,6 +8,8 @@ import java.util.Queue;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
+
+import etl.observe.FileSystemMonitor;
 
 public class FileSystemMonitorTest {
     @Test(expectedExceptions = { NullPointerException.class })
