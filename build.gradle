@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'application'
+    id 'jacoco'
 }
 
 repositories {
@@ -16,4 +17,12 @@ mainClassName = 'etl.Main'
 
 test {
     useTestNG()
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination file("${buildDir}/reports/coverage")
+    }
 }

@@ -14,7 +14,7 @@ public class StringToString {
      * @param endIndex the ending index to parse, exclusive
      * @return the substring of the record between the beginning and the end supplied.
      * @throws IndexOutOfBoundsException if beginIndex or endIndex is negative,
-     *          or if beginIndex is greater than endIndex, or if beginIndex > record.length()
+     *          or if beginIndex is greater than endIndex, or if beginIndex &gt; record.length()
      */
     public String parse(String record, int beginIndex, int endIndex) {
         ParserUtils.verifyIndices(beginIndex, endIndex);

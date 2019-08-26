@@ -7,8 +7,8 @@ public class ParserUtils {
     /**
      * Verifies string parsing indices as far as reasonable under the circumstances.
      *
-     * @param beginIndex
-     * @param endIndex
+     * @param beginIndex the starting index to parse, inclusive
+     * @param endIndex the ending index to parse, exclusive
      */
     public static void verifyIndices(int beginIndex, int endIndex) {
         if (beginIndex < 0 || endIndex < 0) {

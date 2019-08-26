@@ -16,10 +16,10 @@ public class StringToBigInteger {
      * @param record the record to parse
      * @param beginIndex the starting index to parse, inclusive
      * @param endIndex the ending index to parse, exclusive
-     * @returns the BigInteger value of the included substring.
+     * @return the BigInteger value of the included substring.
      * @throws NumberFormatException if the substring does not represent an integer.
      * @throws IndexOutOfBoundsException if beginIndex or endIndex is negative,
-     *          or if beginIndex is greater than endIndex, or if beginIndex > record.length()
+     *          or if beginIndex is greater than endIndex, or if beginIndex &gt; record.length()
      */
     public BigInteger parse(String record, int beginIndex, int endIndex) {
         ParserUtils.verifyIndices(beginIndex, endIndex);

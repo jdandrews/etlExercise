@@ -21,8 +21,9 @@ public class CurrencyStringToMoney {
      * @param endIndex the ending index to parse, exclusive
      * @param decimalShift decimal places to the left-shift the input;
      *          use 0 if the decimal point is already in the right place.
+     * @return the indicated range expressed as a Money object
      * @throws IndexOutOfBoundsException if beginIndex or endIndex is negative,
-     *          or if beginIndex is greater than endIndex, or if beginIndex > record.length()
+     *          or if beginIndex is greater than endIndex, or if beginIndex &gt; record.length()
      */
     public Money parse(String record, int beginIndex, int endIndex, int decimalShift) {
         ParserUtils.verifyIndices(beginIndex, endIndex);
