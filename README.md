@@ -6,7 +6,7 @@ master branch status:
 #Swiftly sample ETL project
 
 This is a little ETL project; the description is in the docs directory
-(see [./docs/ProductInformationIntegrationSpec.md]()). To execute it, 
+(see [./doc](https://github.com/jdandrews/etlExercise/tree/master/doc)). To execute it, 
     
     gradle run
 
