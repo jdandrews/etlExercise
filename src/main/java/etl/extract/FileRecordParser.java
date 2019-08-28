@@ -30,7 +30,7 @@ public class FileRecordParser {
         result.setRegularForX(             stringToBigInteger.parse(   record, 105, 113));
         result.setPromotionalForX(         stringToBigInteger.parse(   record, 114, 122));
         result.setFlags(                   stringToBooleanArray.parse( record, 123, 132));
-        result.setProductDescription(      stringToString.parse(       record, 133, 142));
+        result.setProductSize(             stringToString.parse(       record, 133, 142));
 
         return result;
     }

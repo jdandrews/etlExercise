@@ -66,7 +66,7 @@ public class OneRecordPerLineFileExtractor implements Runnable {
         }
     }
 
-    private void create(File directory) throws IOException {
+    void create(File directory) throws IOException {
         if ( ! directory.exists() ) {
             if ( ! directory.mkdir()) {
                 throw new IOException("Unable to create directory "+directory.getAbsolutePath());
@@ -104,7 +104,7 @@ public class OneRecordPerLineFileExtractor implements Runnable {
      * @param targetDirectory the directory into which the input file is to be moved.
      * @return true of the move succeeds, else false
      */
-    private boolean move(File inputFile, File targetDirectory) {
+    boolean move(File inputFile, File targetDirectory) {
         Path result;
         try {
             result = Files.move(Paths.get(inputFile.getAbsolutePath()),
