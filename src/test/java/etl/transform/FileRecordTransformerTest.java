@@ -30,6 +30,8 @@ public class FileRecordTransformerTest {
 
         DatabaseRecord actual = outputQueue.poll();
         assertEquals(actual.getStoreId(), "something with indicating the store name");
+        assertEquals(actual.getProductId(), BigInteger.ONE);
+        assertEquals(actual.getProductDescription(), "a really nice product");
         assertEquals(actual.getRegularDisplayPrice(), "7.98");
         assertEquals(actual.getRegularCalculatorPrice(), new Money("7.98"));
         assertEquals(actual.getPromotionalDisplayPrice(), "2.49");
@@ -40,6 +42,8 @@ public class FileRecordTransformerTest {
 
         actual = outputQueue.poll();
         assertEquals(actual.getStoreId(), "something store name");
+        assertEquals(actual.getProductId(), BigInteger.TEN);
+        assertEquals(actual.getProductDescription(), "another really nice product");
         assertEquals(actual.getRegularDisplayPrice(), "5.00 / 7");
         assertEquals(actual.getRegularCalculatorPrice(), new Money("0.7143"));
         assertEquals(actual.getPromotionalDisplayPrice(), "9.00 / 7");
@@ -53,6 +57,8 @@ public class FileRecordTransformerTest {
         FileRecord result = new FileRecord();
 
         result.setSourceFilename("something with indicating the store name");
+        result.setProductId(BigInteger.ONE);
+        result.setProductDescription("a really nice product");
         result.setRegularSingularPrice(new Money("7.98"));
         result.setRegularSplitPrice(new Money("0.00"));
         result.setRegularForX(BigInteger.ZERO);
@@ -71,6 +77,8 @@ public class FileRecordTransformerTest {
         FileRecord result = new FileRecord();
 
         result.setSourceFilename("something store name");
+        result.setProductId(BigInteger.TEN);
+        result.setProductDescription("another really nice product");
         result.setRegularSingularPrice(new Money("0.00"));
         result.setRegularSplitPrice(new Money("5.00"));
         result.setRegularForX(new BigInteger("7"));

@@ -10,6 +10,7 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 import etl.extract.OneRecordPerLineFileExtractor;
+import etl.load.StubLoader;
 import etl.model.DatabaseRecord;
 import etl.model.FileRecord;
 import etl.observe.FileSystemMonitor;
@@ -39,7 +40,7 @@ public class Main {
         fileSystemMonitor.scheduleAtFixedRate(new FileSystemMonitor(incomingFiles), 0, 5, TimeUnit.SECONDS);
         extractor.scheduleAtFixedRate(new OneRecordPerLineFileExtractor(incomingFiles, recordsToTransform), 0, 5, TimeUnit.SECONDS);
         transformer.scheduleAtFixedRate(new FileRecordTransformer(recordsToTransform, recordsToLoad), 0, 5, TimeUnit.SECONDS);
-        loader.scheduleAtFixedRate(new Loader(recordsToLoad), 0, 5, TimeUnit.SECONDS);
+        loader.scheduleAtFixedRate(new StubLoader(recordsToLoad), 0, 5, TimeUnit.SECONDS);
     }
 
     public static void main(String[] args) {

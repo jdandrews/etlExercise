@@ -35,6 +35,10 @@ public class FileRecordTransformer implements Runnable {
 
         result.setStoreId(in.getSourceFilename());
 
+        result.setProductId(in.getProductId());
+
+        result.setProductDescription(in.getProductDescription());
+
         result.setRegularDisplayPrice(getDisplayPrice(
                 in.getRegularSingularPrice(), in.getRegularSplitPrice(), in.getRegularForX()));
 

@@ -1,6 +1,7 @@
 package etl.model;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 
 /**
  * A single internal-format record to be inserted. A dumb data structure, which you can optionally
@@ -8,6 +9,8 @@ import java.math.BigDecimal;
  */
 public class DatabaseRecord {
     private String storeId;
+    private BigInteger productId;
+    private String productDescription;
     private String regularDisplayPrice;
     private Money regularCalculatorPrice;
     private String promotionalDisplayPrice;
@@ -21,6 +24,18 @@ public class DatabaseRecord {
     }
     public void setStoreId(String storeId) {
         this.storeId = storeId;
+    }
+    public BigInteger getProductId() {
+        return productId;
+    }
+    public void setProductId(BigInteger productId) {
+        this.productId = productId;
+    }
+    public String getProductDescription() {
+        return productDescription;
+    }
+    public void setProductDescription(String productDescription) {
+        this.productDescription = productDescription;
     }
     public String getRegularDisplayPrice() {
         return regularDisplayPrice;
