@@ -5,9 +5,9 @@ import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.util.Queue;
 
-import etl.DatabaseRecord;
-import etl.extract.FileRecord;
-import etl.extract.Money;
+import etl.model.DatabaseRecord;
+import etl.model.FileRecord;
+import etl.model.Money;
 
 public class FileRecordTransformer implements Runnable {
     Queue<FileRecord> inputQueue;

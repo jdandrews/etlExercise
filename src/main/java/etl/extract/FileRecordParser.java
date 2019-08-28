@@ -1,5 +1,7 @@
 package etl.extract;
 
+import etl.model.FileRecord;
+
 public class FileRecordParser {
     private static final int DECIMAL_SHIFT = 2;
 

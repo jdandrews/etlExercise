@@ -1,4 +1,4 @@
-package etl.extract;
+package etl.model;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

@@ -9,9 +9,9 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
-import etl.DatabaseRecord;
-import etl.extract.FileRecord;
-import etl.extract.Money;
+import etl.model.DatabaseRecord;
+import etl.model.FileRecord;
+import etl.model.Money;
 
 public class FileRecordTransformerTest {
     Queue<FileRecord> inputQueue = new LinkedList<>();

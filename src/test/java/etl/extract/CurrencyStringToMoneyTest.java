@@ -5,6 +5,8 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
+import etl.model.Money;
+
 public class CurrencyStringToMoneyTest {
     private final CurrencyStringToMoney parser = new CurrencyStringToMoney();
 

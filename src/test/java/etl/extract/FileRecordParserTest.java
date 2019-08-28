@@ -6,6 +6,9 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
+import etl.model.FileRecord;
+import etl.model.Money;
+
 public class FileRecordParserTest {
     private final FileRecordParser parser = new FileRecordParser();
 

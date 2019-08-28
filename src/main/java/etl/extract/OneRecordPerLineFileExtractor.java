@@ -12,6 +12,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.Queue;
 
 import etl.Configuration;
+import etl.model.FileRecord;
 
 /**
  * Extracts inbound records from an input file and enqueues them for transformation. Assumes one record per

@@ -1,8 +1,6 @@
-package etl;
+package etl.model;
 
 import java.math.BigDecimal;
-
-import etl.extract.Money;
 
 /**
  * A single internal-format record to be inserted. A dumb data structure, which you can optionally

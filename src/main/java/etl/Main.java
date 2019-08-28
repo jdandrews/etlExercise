@@ -9,8 +9,9 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-import etl.extract.FileRecord;
 import etl.extract.OneRecordPerLineFileExtractor;
+import etl.model.DatabaseRecord;
+import etl.model.FileRecord;
 import etl.observe.FileSystemMonitor;
 import etl.transform.FileRecordTransformer;
 

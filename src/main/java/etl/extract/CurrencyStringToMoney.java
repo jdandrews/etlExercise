@@ -3,6 +3,8 @@ package etl.extract;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+import etl.model.Money;
+
 /**
  * Extracts a substring from the record and converts it to a money object. Assumes the string is unscaled,
  * and offers the option to shift the decimal place, effectively inserting an implied decimal point. For example,

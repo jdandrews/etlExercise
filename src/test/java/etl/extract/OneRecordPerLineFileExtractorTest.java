@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
 import etl.Configuration;
+import etl.model.FileRecord;
 
 public class OneRecordPerLineFileExtractorTest {
     private final Queue<File> filesToParse = new LinkedList<>();
