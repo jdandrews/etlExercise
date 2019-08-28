@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 import etl.extract.FileRecord;
 import etl.extract.OneRecordPerLineFileExtractor;
 import etl.observe.FileSystemMonitor;
+import etl.transform.FileRecordTransformer;
 
 /**
  * System entry point. Holds the data queues, and launches the threads which monitor the queues and processes them.
@@ -36,7 +37,7 @@ public class Main {
         // build the execution pipeline and run
         fileSystemMonitor.scheduleAtFixedRate(new FileSystemMonitor(incomingFiles), 0, 5, TimeUnit.SECONDS);
         extractor.scheduleAtFixedRate(new OneRecordPerLineFileExtractor(incomingFiles, recordsToTransform), 0, 5, TimeUnit.SECONDS);
-        transformer.scheduleAtFixedRate(new Transformer(recordsToTransform, recordsToLoad), 0, 5, TimeUnit.SECONDS);
+        transformer.scheduleAtFixedRate(new FileRecordTransformer(recordsToTransform, recordsToLoad), 0, 5, TimeUnit.SECONDS);
         loader.scheduleAtFixedRate(new Loader(recordsToLoad), 0, 5, TimeUnit.SECONDS);
     }
 

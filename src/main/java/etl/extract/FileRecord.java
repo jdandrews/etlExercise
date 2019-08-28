@@ -25,7 +25,7 @@ public class FileRecord {
         return productId;
     }
 
-    void setProductId(BigInteger productId) {
+    public void setProductId(BigInteger productId) {
         this.productId = productId;
     }
 
@@ -33,7 +33,7 @@ public class FileRecord {
         return productDescription;
     }
 
-    void setProductDescription(String productDescription) {
+    public void setProductDescription(String productDescription) {
         this.productDescription = productDescription;
     }
 
@@ -41,7 +41,7 @@ public class FileRecord {
         return regularSingularPrice;
     }
 
-    void setRegularSingularPrice(Money regularSingularPrice) {
+    public void setRegularSingularPrice(Money regularSingularPrice) {
         this.regularSingularPrice = regularSingularPrice;
     }
 
@@ -49,7 +49,7 @@ public class FileRecord {
         return promotionalSingularPrice;
     }
 
-    void setPromotionalSingularPrice(Money promotionalSingularPrice) {
+    public void setPromotionalSingularPrice(Money promotionalSingularPrice) {
         this.promotionalSingularPrice = promotionalSingularPrice;
     }
 
@@ -57,7 +57,7 @@ public class FileRecord {
         return regularSplitPrice;
     }
 
-    void setRegularSplitPrice(Money regularSplitPrice) {
+    public void setRegularSplitPrice(Money regularSplitPrice) {
         this.regularSplitPrice = regularSplitPrice;
     }
 
@@ -65,7 +65,7 @@ public class FileRecord {
         return promotionalSplitPrice;
     }
 
-    void setPromotionalSplitPrice(Money promotionalSplitPrice) {
+    public void setPromotionalSplitPrice(Money promotionalSplitPrice) {
         this.promotionalSplitPrice = promotionalSplitPrice;
     }
 
@@ -73,7 +73,7 @@ public class FileRecord {
         return regularForX;
     }
 
-    void setRegularForX(BigInteger regularForX) {
+    public void setRegularForX(BigInteger regularForX) {
         this.regularForX = regularForX;
     }
 
@@ -81,7 +81,7 @@ public class FileRecord {
         return promotionalForX;
     }
 
-    void setPromotionalForX(BigInteger promotionalForX) {
+    public void setPromotionalForX(BigInteger promotionalForX) {
         this.promotionalForX = promotionalForX;
     }
 
@@ -89,7 +89,7 @@ public class FileRecord {
         return flags;
     }
 
-    void setFlags(boolean[] flags) {
+    public void setFlags(boolean[] flags) {
         this.flags = flags;
     }
 
@@ -97,7 +97,7 @@ public class FileRecord {
         return productSize;
     }
 
-    void setProductSize(String productSize) {
+    public void setProductSize(String productSize) {
         this.productSize = productSize;
     }
 
@@ -105,7 +105,7 @@ public class FileRecord {
         return sourceFilename;
     }
 
-    void setSourceFilename(String filename) {
+    public void setSourceFilename(String filename) {
         sourceFilename = filename;
     }
 
@@ -113,7 +113,7 @@ public class FileRecord {
         return sourceFileLastModified;
     }
 
-    void setSourceFileLastModified(long timeInMsPastTheEpoch) {
+    public void setSourceFileLastModified(long timeInMsPastTheEpoch) {
         sourceFileLastModified = timeInMsPastTheEpoch;
     }
 }
