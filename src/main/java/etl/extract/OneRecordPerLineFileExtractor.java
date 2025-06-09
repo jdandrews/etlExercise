@@ -53,6 +53,7 @@ public class OneRecordPerLineFileExtractor implements Runnable {
         }
 
         while ( ! filesToParse.isEmpty() ) {
+            // TODO: check the working directory for unfinished work
             File inputFile = filesToParse.poll();
             long fileModified = inputFile.lastModified();
 

@@ -18,7 +18,7 @@ mainClassName = 'etl.Main'
 test {
     useTestNG()
 }
-
+/*
 jacocoTestReport {
     reports {
         xml.enabled false
@@ -26,3 +26,4 @@ jacocoTestReport {
         html.destination file("${buildDir}/reports/coverage")
     }
 }
+*/
